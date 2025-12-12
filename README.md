@@ -73,7 +73,8 @@ ________________________________________________________________________________
 ***PROJECT STRUCTURE***
 ___________________________________________________________________________________________________________________________________________
 E-Ballot/
-│
+
+
 ├── admin/               → Admin dashboard, approvals, results  
 ├── user/                → Voter pages (vote, view result)  
 ├── candidate/           → Candidate application pages  
