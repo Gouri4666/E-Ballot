@@ -65,7 +65,7 @@ ________________________________________________________________________________
 | Frontend        | HTML, CSS, JavaScript |
 | Backend         | PHP                   |
 | Database        | MySQL                 |
-| Server          | XAMPP / WAMP          |
+| Server          | XAMPP                 |
 | Version Control | Git & GitHub          |
 
 
