@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login as User or Admin</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1em;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.user-btn {
+    background-color: #327734;
+}
+
+.user-btn:hover {
+    background-color: #45a049;
+}
+
+.admin-btn {
+    background-color: #15609e;
+}
+
+.admin-btn:hover {
+    background-color: #1e87d6;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to <span>E-Ballot</span></h1>
+        <p>Please select your login type</p>
+        <div class="buttons">
+            <a href="user_login.php" class="btn user-btn">Login as User</a>
+            <a href="admin_login.php" class="btn admin-btn">Login as Admin</a>
+        </div>
+    </div>
+</body>
+</html>

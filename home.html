@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a {
+            text-decoration: none;
+        }
+        ul {
+            list-style: none;
+        }
+        .navbar {
+            position: absolute;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 20px;
+            color: whitesmoke;
+            top: 0;
+            left: 0;
+            z-index: 10; /* Ensure navbar is above other elements */
+        }
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links li {
+            margin: 0 30px;
+            list-style: none;
+        }
+        .nav-links li a {
+            color: whitesmoke;
+        }
+        .nav-links li a:hover {
+            color: chocolate;
+            transition: all 0.4s ease 0s;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        header {
+            position: relative; /* Ensure header is positioned for internal elements */
+            width: 100vw;
+            height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)), url('tick.jpg');
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .header-content {
+            color: whitesmoke;
+            text-align: center;
+        }
+        .header-content h1 {
+            margin: 1rem 0;
+        }
+        .header-content h2 {
+            font-size: 4vmin;
+        }
+        .line {
+            width: 50%;
+            height: 3px;
+            background: aliceblue;
+            margin: 1rem auto;
+        }
+        .quote {
+            position: absolute;
+            bottom: 2rem;
+            max-width: 50%;
+            text-align: center;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: aliceblue;
+        }
+        .line {
+            width: 150px;
+            height: 4px;
+            background-color: chocolate;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        /* Apply for Candidate Section */
+    .apply-candidate {
+    text-align: center;
+    padding: 50px 20px;
+    border: 2px solid chocolate; /* Add border */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px auto; /* Center the section and add margin */
+    width: 80%; /* Adjust width if needed */
+    height: 50vh;
+}
+
+
+.apply-candidate h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: chocolate;
+    font-family: cursive;
+}
+.apply-candidate p{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.apply-candidate button {
+    padding: 10px 20px;
+    background-color: chocolate;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.apply-candidate button:hover {
+    background-color: #ffcc80;
+}
+
+      
+        section {
+            width: 80%;
+            margin: 80px auto;
+        }
+        .col img {
+            width: 300px;
+            height: 250px;
+            padding: 20px;
+        }
+        .events {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .events .row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .events .col {
+            width: 300px;
+            margin: 0 20px;
+            text-align: center;
+        }
+        .events .col img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+        .events .col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        .events .col .ctn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .events .col .ctn:hover {
+            background-color: #555;
+        }
+
+        /* New Section Styles (Similar to ElectionBuddy) */
+        .election-buddy {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f8f9fa;
+        }
+        .election-buddy h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: cursive;
+        }
+        .election-buddy p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: gray;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            justify-items: center;
+        }
+        .grid-item {
+            background-color: white;
+            border: 3px solid orange;
+            padding: 20px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: chocolate;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 250px; /* Fixed width */
+            height: 80px; /* Fixed height */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .grid-item:hover {
+            background-color: #ffcc80;
+        }
+
+        /* Feedback Form Section */
+        .feedback-form {
+            background-color: #f1f1f1;
+            padding: 50px 20px;
+            text-align: center;
+            border: 2px solid chocolate;
+        }
+        .feedback-form h2 {
+            margin-bottom: 20px;
+            color: chocolate;
+            font-family: cursive;
+        }
+        .feedback-form form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .feedback-form label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: chocolate;
+        }
+        .feedback-form input, 
+        .feedback-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .feedback-form button {
+            padding: 10px 20px;
+            background-color: chocolate;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        .feedback-form button:hover {
+            background-color: #f8f4f4;
+            color: chocolate;
+        }
+
+        /* Mobile Styles */
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: whitesmoke;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .navbar {
+                position: absolute;
+                top: 20px; /* Adjusted to fit inside header */
+                left: 20px; /* Adjusted to fit inside header */
+                width: calc(100% - 40px); /* Ensure navbar fits within padding */
+                padding: 10px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: rgb(63, 44, 82);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                z-index: 1;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 20px 0;
+                text-align: center;
+            }
+            .menu-btn {
+                display: block;
+                position: absolute;
+                top: 20px; /* Adjusted to fit inside header */
+                right: 20px; /* Adjusted to fit inside header */
+            }
+        }
+
+        /* Popup Styles */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">E-Ballot</h1>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="useroradmin.html">Login</a></li>
+        </ul>
+        <div class="menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+    <header>
+        <div class="header-content">
+            <h2>VOTE....!!</h2>
+            <div class="line"></div>
+            <h1>A Tool For A Better Future</h1>
+        </div>
+        <div class="quote">
+            <p>"Elections belong to the people. It's their decision. If they decide to turn their back on the fire and burn their behinds, then they will just have to sit on their blisters." <br>-Abraham Lincoln</p>
+        </div>        
+    </header>  
+
+    <!-- Apply for Candidate Section -->
+
+
+    <section class="apply-candidate">
+        <h2>Apply for Candidate</h2>
+        <p>If you're interested in participating in the upcoming elections, now is your chance! Apply to become a candidate and stand for your preferred position. Showcase your leadership, represent your community, and make a difference. Click the button below to start your application process.</p><br>
+        <button onclick="window.location.href='candidate_registration.php'">Click Here</button>
+    </section>
+    
+
+    <section class="election-buddy">
+        <h1>Who uses E-Ballot for elections</h1>
+        <p>E-Ballot is used by various organizations to facilitate smooth and secure voting processes.</p>
+        <div class="grid-container">
+            <div class="grid-item">Lawyers And Accountants</div>
+            <div class="grid-item">Non-profits</div>
+            <div class="grid-item">NGOs, Societies or Clubs</div>
+            <div class="grid-item">Universities And Colleges</div>
+            <div class="grid-item">Industry And Associations</div>
+            <div class="grid-item">Churches and religious groups</div>
+            <div class="grid-item">Governments</div>
+            <div class="grid-item">Other Organizations</div>
+            <div class="grid-item">Political Parties</div>
+            <div class="grid-item">Service Providers</div>
+            <div class="grid-item">Professional Associations</div>
+            <div class="grid-item">Golf Club And Country Club</div>
+        </div>
+    </section>
+
+    <!-- Feedback Form Section -->
+    <section class="feedback-form">
+        <h2>We Value Your Feedback!</h2>
+        <form id="feedbackForm" action="submit_feedback.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="feedback">Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+
+    <footer style="background-color: #333; color: whitesmoke; text-align: center; padding: 30px 20px; margin-top: 50px;">
+        <div class="footer-content">
+            <p>&copy; 2024 E-BALLOT. All Rights Reserved.</p>
+            <ul style="display: flex; justify-content: center; margin-top: 20px;">
+                <li style="margin: 0 10px;"><a href="#" style="color: whitesmoke;"><i class="fab fa-facebook"></i></a></li>
+                <li style="margin: 0 10px;"><a href="#" style="color: whitesmoke;"><i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div id="popup" class="popup">
+        <p>Thank you for your feedback!</p>
+    </div>
+
+    <script>
+        // For Mobile Menu Toggle
+        const menuBtn = document.querySelector('.menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Display popup after form submission
+        const feedbackForm = document.getElementById('feedbackForm');
+        feedbackForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent the default form submission
+            document.getElementById('popup').style.display = 'block';
+
+            // Optionally, submit the form using AJAX here if desired
+            setTimeout(() => {
+                feedbackForm.submit(); // Submit the form after showing the popup
+            }, 1500); // Adjust the delay as needed
+        });
+    </script>
+</body>
+</html>
